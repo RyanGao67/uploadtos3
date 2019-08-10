@@ -29,3 +29,7 @@ python s3upload.py --bucket trigger20190809 --username testusername --password s
 ![GitHub Logo](img/meta.png)   
   * result     
 ![GitHub Logo](img/result.png)
+
+
+* The get infofromsqs.py will receive information from sqs service
+* The lambda function will be triggered when the file is dropped in to s3 bucket and the function will send the file meta data to sqs queue
