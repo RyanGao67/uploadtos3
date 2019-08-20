@@ -180,42 +180,42 @@ def lambda_handler(event, context):
 ### How to add library to lambda function
 https://docs.aws.amazon.com/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html
 
-* Install libraries in a new, project-local package directory with pip's --target option.
-```~/my-function$ pip install --target ./package Pillow```
-```~/my-function$ cd package```
-```~/my-function/package$ zip -r9 ${OLDPWD}/function.zip .```
-  adding: PIL/ (stored 0%)
-  adding: PIL/.libs/ (stored 0%)
-  adding: PIL/.libs/libfreetype-7ce95de6.so.6.16.1 (deflated 65%)
-  adding: PIL/.libs/libjpeg-3fe7dfc0.so.9.3.0 (deflated 72%)
-  adding: PIL/.libs/liblcms2-a6801db4.so.2.0.8 (deflated 67%)
-...
-Add your function code to the archive.
-```~/my-function/package$ cd $OLDPWD```
-```~/my-function$ zip -g function.zip function.py```
-  adding: function.py (deflated 56%)
-Update the function code.
-```~/my-function$ aws lambda update-function-code --function-name python37 --zip-file fileb://function.zip```
-{
-    "FunctionName": "python37",
-    "FunctionArn": "arn:aws:lambda:us-west-2:123456789012:function:python37",
-    "Runtime": "python3.7",
-    "Role": "arn:aws:iam::123456789012:role/lambda-role",
-    "Handler": "function.handler",
-    "CodeSize": 2269409,
-    "Description": "",
-    "Timeout": 3,
-    "MemorySize": 128,
-    "LastModified": "2018-11-20T20:51:35.871+0000",
-    "CodeSha256": "GcZ05oeHoJi61VpQj7vCLPs8DwCXmX5sE/fE2IHsizc=",
-    "Version": "$LATEST",
-    "VpcConfig": {
-        "SubnetIds": [],
-        "SecurityGroupIds": [],
-        "VpcId": ""
-    },
-    "TracingConfig": {
-        "Mode": "Active"
-    },
-    "RevisionId": "a9c05ffd-8ad6-4d22-b6cd-d34a00c1702c"
-}
+* Install libraries in a new, project-local package directory with pip's --target option.    
+```~/my-function$ pip install --target ./package Pillow```   
+```~/my-function$ cd package```   
+```~/my-function/package$ zip -r9 ${OLDPWD}/function.zip .```   
+  adding: PIL/ (stored 0%)   
+  adding: PIL/.libs/ (stored 0%)   
+  adding: PIL/.libs/libfreetype-7ce95de6.so.6.16.1 (deflated 65%)   
+  adding: PIL/.libs/libjpeg-3fe7dfc0.so.9.3.0 (deflated 72%)   
+  adding: PIL/.libs/liblcms2-a6801db4.so.2.0.8 (deflated 67%)   
+...   
+Add your function code to the archive.   
+```~/my-function/package$ cd $OLDPWD```   
+```~/my-function$ zip -g function.zip function.py```   
+  adding: function.py (deflated 56%)   
+Update the function code.   
+```~/my-function$ aws lambda update-function-code --function-name python37 --zip-file fileb://function.zip```   
+{   
+    "FunctionName": "python37",   
+    "FunctionArn": "arn:aws:lambda:us-west-2:123456789012:function:python37",   
+    "Runtime": "python3.7",   
+    "Role": "arn:aws:iam::123456789012:role/lambda-role",    
+    "Handler": "function.handler",   
+    "CodeSize": 2269409,   
+    "Description": "",   
+    "Timeout": 3,   
+    "MemorySize": 128,   
+    "LastModified": "2018-11-20T20:51:35.871+0000",   
+    "CodeSha256": "GcZ05oeHoJi61VpQj7vCLPs8DwCXmX5sE/fE2IHsizc=",   
+    "Version": "$LATEST",   
+    "VpcConfig": {   
+        "SubnetIds": [],   
+        "SecurityGroupIds": [],   
+        "VpcId": ""   
+    },   
+    "TracingConfig": {   
+        "Mode": "Active"   
+    },   
+    "RevisionId": "a9c05ffd-8ad6-4d22-b6cd-d34a00c1702c"   
+}   
